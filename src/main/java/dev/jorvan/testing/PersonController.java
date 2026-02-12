@@ -2,6 +2,7 @@ package dev.jorvan.testing;
 
 import dev.jorvan.testing.models.Person;
 import dev.jorvan.testing.services.PersonService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +25,7 @@ public class PersonController {
         return ResponseEntity.ok(service.findById(id));
     }
     @PostMapping
-    public ResponseEntity<Person> save(@RequestBody Person person) {
+    public ResponseEntity<Person> save(@RequestBody @Valid Person person) {
         return new ResponseEntity<>(service.save(person), HttpStatus.CREATED);
     }
     @PutMapping("/person/{id}")
