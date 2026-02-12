@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: testing
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/persons
+    username: root
+    password: root
